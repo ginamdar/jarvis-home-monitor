@@ -1,0 +1,529 @@
+{
+	"interactionModel": {
+		"languageModel": {
+			"invocationName": "jarvis",
+			"intents": [{
+					"name": "AMAZON.FallbackIntent",
+					"samples": []
+				}, {
+					"name": "AMAZON.CancelIntent",
+					"samples": []
+				}, {
+					"name": "AMAZON.HelpIntent",
+					"samples": []
+				}, {
+					"name": "AMAZON.StopIntent",
+					"samples": []
+				}, {
+					"name": "AMAZON.NavigateHomeIntent",
+					"samples": []
+				}, {
+					"name": "FloorAndTemperatureIntent",
+					"slots": [{
+							"name": "temperature",
+							"type": "TYPE_OF_TEMPERATURE",
+							"samples": [
+								"temperature",
+								"humid",
+								"humidity"
+							]
+						}, {
+							"name": "room",
+							"type": "AMAZON.Room",
+							"samples": [
+								"attic",
+								"second",
+								"cellar",
+								"backyard",
+								"living room",
+								"basement",
+								"second floor"
+							]
+						}
+					],
+					"samples": [
+						"check {room} {temperature}",
+						"what is {temperature}",
+						"check {temperature}",
+						"to check {temperature} in {room}",
+						"What is the {temperature} in {room}",
+						"What is {room} {temperature}",
+						"What's the {temperature} on {room}",
+						"check the  {room} {temperature}",
+						"What is the {temperature} on {room}",
+						"check {temperature} on {room}"
+					]
+				}, {
+					"name": "SoftenerSaltLevelIntent",
+					"slots": [{
+							"name": "salt_level",
+							"type": "salt"
+						}, {
+							"name": "softner",
+							"type": "softener"
+						}
+					],
+					"samples": [
+						"What is {salt_level} in {softner}",
+						"report {salt_level}",
+						"check {salt_level} in {softner}",
+						"{salt_level}",
+						"What is {softner} {salt_level}"
+					]
+				}, {
+					"name": "BackyardIntent",
+					"slots": [{
+							"name": "jacuzzi",
+							"type": "TYPE_OF_APPLIANCE",
+							"samples": [
+								"{jacuzzi}"
+							]
+						}, {
+							"name": "hot",
+							"type": "HOTTUB_TEMPERATURE"
+						}
+					],
+					"samples": [
+						"report {jacuzzi}",
+						"to check my {jacuzzi}",
+						"how {hot} is my {jacuzzi}",
+						"How {hot} is {jacuzzi}",
+						"What is the {hot} set for {jacuzzi}",
+						"What is {jacuzzi} {hot}",
+						"check {jacuzzi} {hot}"
+					]
+				}, {
+					"name": "NeoStripColorIntent",
+					"slots": [{
+							"name": "color",
+							"type": "AMAZON.Color",
+							"samples": [
+								"{color}"
+							]
+						}, {
+							"name": "device",
+							"type": "TYPE_OF_APPLIANCE",
+							"samples": [
+								"{device}"
+							]
+						}
+					],
+					"samples": [
+						"turn {device} {color}",
+						"turn {color} for {device}",
+						"turn {color} on {device}",
+						"set {color} on {device}",
+						"to set {color} on {device}"
+					]
+				}, {
+					"name": "DeviceOnOffIntent",
+					"slots": [{
+							"name": "on_off",
+							"type": "ON_OFF_SLOT_TYPE",
+							"samples": [
+								"Off",
+								"On"
+							]
+						}, {
+							"name": "device",
+							"type": "TYPE_OF_APPLIANCE",
+							"samples": [
+								"{device}"
+							]
+						}
+					],
+					"samples": [
+						"switch {on_off} {device}",
+						"to {on_off} {device}",
+						"turn {on_off} {device}"
+					]
+				}
+			],
+			"types": [{
+					"name": "TYPE_OF_TEMPERATURE",
+					"values": [{
+							"id": "humidity",
+							"name": {
+								"value": "humidity",
+								"synonyms": [
+									"moisture",
+									"humidity",
+									"humid"
+								]
+							}
+						}, {
+							"id": "temperature",
+							"name": {
+								"value": "temperature",
+								"synonyms": [
+									"temperature",
+									"cold",
+									"hot"
+								]
+							}
+						}
+					]
+				}, {
+					"name": "salt",
+					"values": [{
+							"id": "salt-level-status",
+							"name": {
+								"value": "salt",
+								"synonyms": [
+									"salt status",
+									"basement salt level",
+									"salt level",
+									"salt"
+								]
+							}
+						}
+					]
+				}, {
+					"name": "softener",
+					"values": [{
+							"id": "basement",
+							"name": {
+								"value": "softener",
+								"synonyms": [
+									"softener",
+									"water softener"
+								]
+							}
+						}
+					]
+				}, {
+					"name": "AMAZON.Room",
+					"values": [{
+							"id": "attic",
+							"name": {
+								"value": "attic",
+								"synonyms": [
+									"attic",
+									"cellar"
+								]
+							}
+						}, {
+							"id": "livingroom",
+							"name": {
+								"value": "living room",
+								"synonyms": [
+									"Hall",
+									"Living Area",
+									"Main Room"
+								]
+							}
+						}, {
+							"id": "basement",
+							"name": {
+								"value": "basement",
+								"synonyms": [
+									"underground",
+									"basement"
+								]
+							}
+						}, {
+							"id": "second-floor",
+							"name": {
+								"value": "second floor",
+								"synonyms": [
+									"Top Floor",
+									"Upper floor",
+									"2nd floor"
+								]
+							}
+						}
+					]
+				}, {
+					"name": "TYPE_OF_APPLIANCE",
+					"values": [{
+							"id": "master-bed",
+							"name": {
+								"value": "Neo Bed",
+								"synonyms": [
+									"Gurus Bed",
+									"Master Bed",
+									"Bed",
+									"Neo Bed"
+								]
+							}
+						}, {
+							"id": "backyard",
+							"name": {
+								"value": "Jacuzzi",
+								"synonyms": [
+									"jacuzzi",
+									"hot tub",
+									"hottub"
+								]
+							}
+						}
+					]
+				}, {
+					"name": "HOTTUB_TEMPERATURE",
+					"values": [{
+							"id": "hottubtemprature",
+							"name": {
+								"value": "temperature",
+								"synonyms": [
+									"hot",
+									"temperature"
+								]
+							}
+						}
+					]
+				}, {
+					"name": "ON_OFF_SLOT_TYPE",
+					"values": [{
+							"name": {
+								"value": "Off",
+								"synonyms": [
+									"off"
+								]
+							}
+						}, {
+							"name": {
+								"value": "On",
+								"synonyms": [
+									"on"
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		"dialog": {
+			"intents": [{
+					"name": "FloorAndTemperatureIntent",
+					"confirmationRequired": false,
+					"prompts": {},
+					"slots": [{
+							"name": "temperature",
+							"type": "TYPE_OF_TEMPERATURE",
+							"confirmationRequired": false,
+							"elicitationRequired": true,
+							"prompts": {
+								"elicitation": "Elicit.Slot.1481554254127.391220757287"
+							}
+						}, {
+							"name": "room",
+							"type": "AMAZON.Room",
+							"confirmationRequired": false,
+							"elicitationRequired": true,
+							"prompts": {
+								"elicitation": "Elicit.Slot.904681573475.1393682740107"
+							}
+						}
+					]
+				}, {
+					"name": "SoftenerSaltLevelIntent",
+					"confirmationRequired": false,
+					"prompts": {},
+					"slots": [{
+							"name": "salt_level",
+							"type": "salt",
+							"confirmationRequired": false,
+							"elicitationRequired": true,
+							"prompts": {
+								"elicitation": "Elicit.Slot.1082199792545.1435340335488"
+							}
+						}, {
+							"name": "softner",
+							"type": "softener",
+							"confirmationRequired": false,
+							"elicitationRequired": false,
+							"prompts": {}
+						}
+					]
+				}, {
+					"name": "BackyardIntent",
+					"confirmationRequired": false,
+					"prompts": {},
+					"slots": [{
+							"name": "jacuzzi",
+							"type": "TYPE_OF_APPLIANCE",
+							"confirmationRequired": false,
+							"elicitationRequired": true,
+							"prompts": {
+								"elicitation": "Elicit.Slot.1290929660743.1007106504951"
+							}
+						}, {
+							"name": "hot",
+							"type": "HOTTUB_TEMPERATURE",
+							"confirmationRequired": true,
+							"elicitationRequired": false,
+							"prompts": {
+								"confirmation": "Confirm.Slot.299233362507.1138050020150"
+							}
+						}
+					]
+				}, {
+					"name": "NeoStripColorIntent",
+					"confirmationRequired": false,
+					"prompts": {},
+					"slots": [{
+							"name": "color",
+							"type": "AMAZON.Color",
+							"confirmationRequired": false,
+							"elicitationRequired": true,
+							"prompts": {
+								"elicitation": "Elicit.Slot.828940227304.501081033900"
+							},
+							"validations": [{
+									"type": "isInSet",
+									"prompt": "Slot.Validation.832810908456.1163734260314.1446975348757",
+									"values": [
+										"red",
+										"orange",
+										"pink",
+										"green",
+										"white",
+										"blue",
+										"yellow",
+										"purple"
+									]
+								}
+							]
+						}, {
+							"name": "device",
+							"type": "TYPE_OF_APPLIANCE",
+							"confirmationRequired": false,
+							"elicitationRequired": true,
+							"prompts": {
+								"elicitation": "Elicit.Slot.828940227304.709586670756"
+							}
+						}
+					]
+				}, {
+					"name": "DeviceOnOffIntent",
+					"confirmationRequired": false,
+					"prompts": {},
+					"slots": [{
+							"name": "on_off",
+							"type": "ON_OFF_SLOT_TYPE",
+							"confirmationRequired": false,
+							"elicitationRequired": true,
+							"prompts": {
+								"elicitation": "Elicit.Slot.803743955198.1039772863786"
+							}
+						}, {
+							"name": "device",
+							"type": "TYPE_OF_APPLIANCE",
+							"confirmationRequired": false,
+							"elicitationRequired": true,
+							"prompts": {
+								"elicitation": "Elicit.Slot.803743955198.248761205073"
+							}
+						}
+					]
+				}
+			],
+			"delegationStrategy": "SKILL_RESPONSE"
+		},
+		"prompts": [{
+				"id": "Elicit.Slot.904681573475.1393682740107",
+				"variations": [{
+						"type": "PlainText",
+						"value": "Can you repeat the {room} ?"
+					}, {
+						"type": "PlainText",
+						"value": " {room} ?"
+					}
+				]
+			}, {
+				"id": "Confirm.Slot.1498330825015.1038524877194",
+				"variations": [{
+						"type": "PlainText",
+						"value": "Can you please tell me which room or floor?"
+					}, {
+						"type": "PlainText",
+						"value": "Which part of the house again?"
+					}
+				]
+			}, {
+				"id": "Elicit.Slot.1481554254127.391220757287",
+				"variations": [{
+						"type": "PlainText",
+						"value": "Can you specify which data you wish to monitor. Is it Temperature or humidity?"
+					}
+				]
+			}, {
+				"id": "Elicit.Slot.1290929660743.1007106504951",
+				"variations": [{
+						"type": "PlainText",
+						"value": "Can you specify which device, Only {jacuzzi} is supported"
+					}
+				]
+			}, {
+				"id": "Elicit.Slot.1290929660743.428661763049",
+				"variations": [{
+						"type": "PlainText",
+						"value": "Do you want to check the {hot} ?"
+					}
+				]
+			}, {
+				"id": "Confirm.Slot.299233362507.1138050020150",
+				"variations": [{
+						"type": "PlainText",
+						"value": "Do you want to know how hot is your Jacuzzi?"
+					}, {
+						"type": "PlainText",
+						"value": "Do you want to check the hot tub temperature?"
+					}
+				]
+			}, {
+				"id": "Elicit.Slot.1082199792545.1435340335488",
+				"variations": [{
+						"type": "PlainText",
+						"value": "Do you want to check the salt level in Water Softener?"
+					}
+				]
+			}, {
+				"id": "Elicit.Slot.828940227304.709586670756",
+				"variations": [{
+						"type": "PlainText",
+						"value": "can you specify which device?"
+					}
+				]
+			}, {
+				"id": "Elicit.Slot.828940227304.501081033900",
+				"variations": [{
+						"type": "PlainText",
+						"value": "can you specify which color you need to set?"
+					}
+				]
+			}, {
+				"id": "Confirm.Slot.832810908456.1163734260314",
+				"variations": [{
+						"type": "PlainText",
+						"value": "Can you specify the color you need to set to?"
+					}
+				]
+			}, {
+				"id": "Slot.Validation.832810908456.1163734260314.1446975348757",
+				"variations": [{
+						"type": "PlainText",
+						"value": "{color} is not supported, use basic color values such as Pink, Oragne, Red, Green, Blue, Yellow, purple or white"
+					}
+				]
+			}, {
+				"id": "Elicit.Slot.803743955198.248761205073",
+				"variations": [{
+						"type": "PlainText",
+						"value": "can you specify which device?"
+					}
+				]
+			}, {
+				"id": "Elicit.Slot.803743955198.1039772863786",
+				"variations": [{
+						"type": "PlainText",
+						"value": "Do you want to turn off?"
+					}, {
+						"type": "PlainText",
+						"value": "Do you wish to turn it on?"
+					}
+				]
+			}
+		]
+	}
+}
