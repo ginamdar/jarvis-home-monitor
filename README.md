@@ -1,5 +1,5 @@
 # jarvis-home-monitor
-Alexa Jarvis Home Monitor is Alexa interaction skill to ask Alexa device for different sensor data e.g temperature, humidity etc in your house using Adafruit API and respond back to the user.
+Alexa Jarvis Home Monitor is interaction skill to ask Alexa device for different sensor data e.g temperature, humidity etc in your house using Adafruit API and respond back to the user.
 
 ## 
 Custom Alexa Skill can be built using Alexa Skill Interaction Model.json. The schema provides various intents for Floor (Basement, 2nd floor, attic etc) and Temperature/Humidity, Water softneer Salt level, Device On/Off, Setting Color intent as well as slots such as Backyard hottub, different rooms. This lambda is integrated tightly with Adafruit I/O.
